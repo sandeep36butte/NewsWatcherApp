@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script SRC=./js/ngapp.js></script>
+       
+        <!--link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'-->
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        <link rel="stylesheet" href='./css/style.css'>
+        
+    </head>
+    <body ng-controller="ApplicationCtrl">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">
+                        NewsWatcher
+                        <span ng-if="currentMsg">
+                            <small id=currentMsgIndex>
+                                ({{currentMsg}})
+                            </small>
+                        </span>
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse" id="myNavbar" data-toggle="collapse" data-target=".navbar-collapse.in">
+                    <ul class="nav navbar-nav">
+                        <li ng-show="loogedIn">
+                            <a id="newsLink" href="javascript:void(0)" ng-click="changeView('/news')">News</a>
+                        </li>
+                        <li ng-show="loogedIn">
+                                <a id="savedLink" href="javascript:void(0)" ng-click="changeView('/news/saved')">Saved News</a>
+                        </li>
+                        <li ng-show="loogedIn">
+                                <a id="sharedLink" href="javascript:void(0)" ng-click="changeView('/sharednews')">Shared News</a>
+                        </li>
+                        <li ng-show="loogedIn">
+                                <a id="profileLink" href="javascript:void(0)" ng-click="changeView('/profile')">Profile</a>
+                        </li>
+                        <li ng-show="loogedIn">
+                                <a id="logoutLink" href="javascript:void(0)" ng-click="logout">Logout</a>
+                        </li>
+                        <li ng-hide="loogedIn">
+                                <a id="profileLink" href="javascript:void(0)" ng-click="changeView('/')">LogIn</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       
+    </body>
+</html>
