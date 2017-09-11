@@ -7,6 +7,6 @@ config.MAX_SHARED_STORIES = 30;
 config.MAX_FILTERS = 5;
 config.MAX_COMMENTS = 30;
 config.MAX_FILTER_STORIES = 15;
-config.MONGODB_CONNECT_URL = "mongodb://sandeep:Arun123@ds135983.mlab.com:35983/newswatcherdb"
+config.MONGODB_CONNECT_URL = ""
 
 module.exports = config;
